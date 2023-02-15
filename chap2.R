@@ -75,7 +75,7 @@ xts(rnorm(5), as.Date("2008-08-01") + 0:4)
 
 ts <- ts(1:10, frequency = 4, start = c(1959, 2))
 
-xts(ts)  ## 오류가 나는게 정상입니다.
+#xts(ts)  ## 오류가 나는게 정상입니다.
 
 as.xts(ts)
 
@@ -125,7 +125,7 @@ students.tsibble <- as_tsibble(students.tsibble, index = 연도)
 
 ###  2.3.2 CSV 파일
 
-employees <- read.csv('./산업별_취업자_20210206234505.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE)
+employees <- read.csv('./산업별_취업자_20210206234505.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE, fileEndcoding='utf-8')
 
 colnames(employees) <- c('time', 'total', 'employees.edu')
 
@@ -139,7 +139,7 @@ employees.tsibble <- as_tsibble(employees, index = time)
 
 
 ###  2.3.3 추가 실습 데이터 생성
-covid19 <- read.csv('./covid19.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE)
+covid19 <- read.csv('./covid19.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE, fileEndcoding='utf-8')
 
 colnames(covid19) <- c('category', 'status', 'date', 'value')
 
