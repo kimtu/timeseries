@@ -125,7 +125,7 @@ students.tsibble <- as_tsibble(students.tsibble, index = 연도)
 
 ###  2.3.2 CSV 파일
 
-employees <- read.csv('./산업별_취업자_20210206234505.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE, fileEndcoding='utf-8')
+employees <- read.csv('./산업별_취업자_20210206234505.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE, fileEncoding='utf-8')
 
 colnames(employees) <- c('time', 'total', 'employees.edu')
 
@@ -139,7 +139,7 @@ employees.tsibble <- as_tsibble(employees, index = time)
 
 
 ###  2.3.3 추가 실습 데이터 생성
-covid19 <- read.csv('./covid19.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE, fileEndcoding='utf-8')
+covid19 <- read.csv('./covid19.csv', header = TRUE, na = '-', strip.white = TRUE, stringsAsFactors = TRUE, fileEncoding='utf-8')
 
 colnames(covid19) <- c('category', 'status', 'date', 'value')
 
